@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+        th.sort-asc::after {
+            content: ' ↑';
+        }
+        th.sort-desc::after {
+            content: ' ↓';
+        }
+        img {
+            max-width: 50px;
+        }
+        #detailView {
+            display: none;
+            margin-top: 20px;
+        }
+        #detailView img {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Superhero Data</h1>
+    <input type="text" id="search" placeholder="Search...">
+    <label for="searchField">Search by:</label>
+    <select id="searchField">
+        <option value="name">Name</option>
+        <option value="fullname">Full Name</option>
+        <option value="powerstats">Powerstats</option>
+        <option value="race">Race</option>
+        <option value="gender">Gender</option>
+        <option value="height">Height</option>
+        <option value="weight">Weight</option>
+        <option value="placeofbirth">Place of Birth</option>
+        <option value="alignment">Alignment</option>
+    </select>
+    <label for="searchOperator">Operator:</label>
+    <select id="searchOperator">
+        <option value="include">Include</option>
+        <option value="exclude">Exclude</option>
+        <option value="equal">Equal</option>
+        <option value="notEqual">Not Equal</option>
+        <option value="greaterThan">Greater Than</option>
+        <option value="lessThan">Less Than</option>
+    </select>
+    <input type="text" id="searchValue" placeholder="Search value">
+
+    <label for="pageSize">Page size:</label>
+    <select id="pageSize">
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="all">All</option>
+    </select>
+    <button id="prevPage">Previous</button>
+    <button id="nextPage">Next</button>
+    <span id="pageInfo"></span>
+
+    <table id="superheroTable">
+        <thead>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Full Name</th>
+                <th>Powerstats</th>
+                <th>Race</th>
+                <th>Gender</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Place of Birth</th>
+                <th>Alignment</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="detailView">
+        <h2>Hero Details</h2>
+        <img id="detailImage" src="" alt="Hero Image">
+        <div id="detailInfo"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
